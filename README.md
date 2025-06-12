@@ -1,3 +1,5 @@
+<p align="right">Bahasa: Indonesia</p>
+
 # Dokumentasi Pearl
 **Pearl** adalah bahasa pemrograman eksperimental yang dirancang agar mudah dibaca, mudah ditulis, dan fleksibel untuk berbagai kebutuhan seperti otomatisasi sederhana, logika kondisional, pemrosesan data, serta pembuatan struktur modular.
 
