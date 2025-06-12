@@ -14,7 +14,12 @@ Pearl dibangun menggunakan Node.js, dengan pendekatan berbasis modul. Setiap per
    ```pearl
    tampilkan "Halo Dunia!"
    ```
-2. Perulangan sederhana:
+2. Menyimpan dan menggunakan variabel
+   ```bash
+   masukkan :nama: = Nazwa
+   tampilkan :nama:
+   ```
+4. Perulangan sederhana:
    ``` pearl
    masukkan :n: 5
    ulangi :n: {
@@ -34,3 +39,11 @@ Jika ingin mencoba secara langsung dalam mode interaktif (REPL), cukup jalankan:
 node index.js
 ```
 Lalu ketik perintah langsung di terminal. Ketik `keluar` dari REPL.
+
+# Instalasi dan Pengembangan
+Karena Pearl berbasis Node.js, kamu hanya perlu:
+```bash
+git clone https://github.com/aflacake/pearl
+cd pearl
+npm install
+```
