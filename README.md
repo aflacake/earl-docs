@@ -16,7 +16,7 @@ Pearl dibangun menggunakan Node.js, dengan pendekatan berbasis modul. Setiap per
    ```
 2. Menyimpan dan menggunakan variabel
    ```bash
-   masukkan :nama: = Nazwa
+   masukkan :nama:
    tampilkan :nama:
    ```
 4. Perulangan sederhana:
