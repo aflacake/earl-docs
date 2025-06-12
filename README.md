@@ -38,7 +38,7 @@ Jika ingin mencoba secara langsung dalam mode interaktif (REPL), cukup jalankan:
 ```bash
 node index.js
 ```
-Lalu ketik perintah langsung di terminal. Ketik `keluar` dari REPL.
+Lalu ketik perintah langsung di terminal. Ketik `keluar` untuk menghentikan REPL.
 
 # Instalasi dan Pengembangan
 Karena Pearl berbasis Node.js, kamu hanya perlu:
