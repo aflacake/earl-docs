@@ -14,12 +14,14 @@ Perintah `atur` digunakan untuk mengatur nilai ke variabel, menghapus variabel, 
    ```
 
    Hasil:
+   ```bash
    memory = {
      nama: "Andi",
      usia: 25
    }
+   ```
 
-2. Mengatur Nilai dalam Daftar
+3. Mengatur Nilai dalam Daftar
    Format:
    ```bash
    atur :namaDaftar[0]: = nilai
@@ -31,7 +33,7 @@ Perintah `atur` digunakan untuk mengatur nilai ke variabel, menghapus variabel, 
    ```
    Ini mengisi indeks ke-0 dari daftar `:angka:` dengan `10`.
 
-3. Mengatur Atribut Objek (Instance dari Kelas)
+4. Mengatur Atribut Objek (Instance dari Kelas)
    Format:
    ```bash
    atur namaObjek.namaAtribut = nilai
@@ -44,7 +46,7 @@ Perintah `atur` digunakan untuk mengatur nilai ke variabel, menghapus variabel, 
    ```
    Pastikan `andi` adalah instance dari kelas, dan atributnya memang didefinisikan
 
-4. Menghapus Variabel
+5. Menghapus Variabel
    Format:
    ```bash
    atur hapus :namaVar: konfirmasi
@@ -56,7 +58,7 @@ Perintah `atur` digunakan untuk mengatur nilai ke variabel, menghapus variabel, 
    ```
    Tanpa kata `konfirmasi`, variabel tidak akan dihapus.
 
-5. Menyimpan Blok Kode
+6. Menyimpan Blok Kode
    Format:
    ```bash
    atur :namaBlok: (
