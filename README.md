@@ -1,3 +1,6 @@
+> Peringatan:
+> Dokumentasi ini beberapa informasi mungkin sudah tidak diperbarui atau tertinggal informasi. Bantu kontribusi proyek ini atau beri usulkan diatas isu.
+
 <p align="right">Bahasa: Indonesia</p>
 
 # Dokumentasi Pearl
