@@ -1,10 +1,10 @@
-# `debug`
+# `periksa`
 Modul ini digunakan untuk melihat isi variabel dan memeriksa keadaan program saat sedang berjalan.
 
 # Cara Pakai
 Gunakan perintah:
 ```pearl
-debug [opsi]
+periksa [opsi]
 ```
 Opsi yang tersedia:
 - Tanpa argumen atau _memory_, Menampilkan semua isi memory saat ini.
@@ -18,25 +18,25 @@ Opsi yang tersedia:
 Contoh Penggunaan:
 ```pearl
 -- Menampilkan semua isi memory --
-debug
+periksa
 
 -- Menampilkan status eksekusi saat ini --
-debug context
+periksa conteks
 
 -- Menampilkan info kanvas (jika ada) --
-debug gambar
+periksa gambar
 
 -- Menampilan elemen ke-2 dari daftar :angka: --
-debug :angka[2]:
+periksa :angka[2]:
 
 -- Menampilkan isi daftar bernama warna --
-debug warna
+periksa warna
 
 -- Menampilkan atribut & instance dari kelas 'Kotak' --
-debug Kotak
+periksa Kotak
 ```
 
 Catatan:
-- Format `:anam[n]:` harus diapit dengan titik dua, misal `:angka[0]:`.
+- Format `:nama[n]:` harus diapit dengan titik dua, misal `:angka[0]:`.
 - Untuk daftar, indeks dimulai dari 0.
 - Tidak semua variabel punya `__tipe`. Jika bukan `kelas`, perintah akan mengabaikannya.
