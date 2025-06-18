@@ -8,7 +8,7 @@ periksa [opsi]
 ```
 Opsi yang tersedia:
 - Tanpa argumen atau _memory_, Menampilkan semua isi memory saat ini.
-- `content`,  Menampilkan posisi eksekusi: baris ke berapa dan apa isinya.
+- `konteks`,  Menampilkan posisi eksekusi: baris ke berapa dan apa isinya.
 - `gambar`, Menampilkan info tentang kanvas (jika sudah dibuat).
 - `semua`, Menampilkan _memory_ dan _context_ sekaligus.
 - `:nama[n]:`, Menampilkan elemen ke-`n` dari daftar bernama `:nama:`.
@@ -21,7 +21,7 @@ Contoh Penggunaan:
 periksa
 
 -- Menampilkan status eksekusi saat ini --
-periksa conteks
+periksa konteks
 
 -- Menampilkan info kanvas (jika ada) --
 periksa gambar
