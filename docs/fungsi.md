@@ -1,7 +1,7 @@
 # `fungsi`
 `fungsi` digunakan untuk membuat **fungsi sendiri** di Pearl. Fungsi ini bisa dipanggil berkali-kali dengan parameter yang berbeda, seperti bahasa pemrograman pada umumnya.
 
-## Format Penulisam
+## Format Penulisan
 ```pearl
 fungsi namaFungsi(param1, param2)
 (
@@ -19,12 +19,28 @@ fungsi halo(nama)
 )
 ```
 Pemanggilan:
-```bash
+```pearl
 Halo "Dunia"
 ```
 Keluaran:
-```pearl
+```bash
 Halo, Dunia
+```
+
+## Contoh Fungsi Kembalikan
+```pearl
+fungsi tambah(a, b)
+(
+  kembalikan a + b
+)
+```
+Eksekusi:
+```pearl
+evaluasi tambah 5 4
+```
+Keluaran:
+```bash
+9
 ```
 
 Aturan penting
