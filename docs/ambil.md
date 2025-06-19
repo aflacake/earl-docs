@@ -7,31 +7,31 @@ Fungsi `ambil` bertugas untuk **mengisi nilai ke variabel dari sumber lain** yan
 - Nilai dalam _dictionary_ (disebut "dikta").
 
 ## Format Umum
-```pearl
+```earl
 ambil :tujuan: dari sumber
 ```
 
 ## Format
 1. Ambil dari Variabel Biasa
-   ```pearl
+   ```earl
    ambil :x: dari :a:
    ```
    Mengambil nilai dari `:a:` dan menyimpannya ke variabel `:x:`.
 
 2. Ambil Seluruh _Array_
-   ```pearl
+   ```earl
    ambil :data: dari :daftar:
    ```
    Jika `:daftar:` adalah array, maka seluruh isi array diambil.
 
 3. Ambil Atribut dari Instance Objek
-   ```pearl
+   ```earl
    ambil :nama: dari user.nama
    ```
    Mengambil atribut `:nama:` dari instance `user`.
 
 4. Ambil Nilai dari Dikta (_dictionary_)
-   ```pearl
+   ```earl
    ambil :nilai: dari :info: usia
    ```
    Jika `:info:` adalah objek `{ usia: 30 }`, maka `:nilai:` akan berisi `30`.
@@ -46,7 +46,7 @@ Modul ini juga:
   - Akses ke dikta gagal.
  
 ## Contoh lengkap
-```pearl
+```earl
 atur :angka: = 100
 atur :info: = (nama: "Rani", usia: 20)
 
@@ -64,4 +64,4 @@ ambil :namaUser: dari user.nama
 - `cariDariLingkup(nama)`, Mencari variabel dari dalam lingkup saat ini atau dari `memory`.
 - `ambilDaftarJikaPerlu(sumber)`, Mengecek apakah `sumber` adalah nama _array_ valid dalam format `:nama:`.
 
-Dokumentasi ini diharapkan dapat memberikan gambaran yang jelas tentang bagaimana modul `ambil.js` bekerja dan bagaimana cara menggunakannya di dalam skrip Pearl.
+Dokumentasi ini diharapkan dapat memberikan gambaran yang jelas tentang bagaimana modul `ambil.js` bekerja dan bagaimana cara menggunakannya di dalam skrip Earl.
