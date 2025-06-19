@@ -1,12 +1,12 @@
 # `atur`
-Perintah `atur` digunakan untuk **menyimpan, mengubah, dan menghapus data** di memori Pearl. Ini bisa berupa:
+Perintah `atur` digunakan untuk **menyimpan, mengubah, dan menghapus data** di memori Earl. Ini bisa berupa:
 - Variabel biasa.
 - Elemen array.
 - Blok kode.
 - Atribut instance objek.
 
 ## Format Umum
-```pearl
+```earl
 atur :nama: = nilai
 atur :nama:[] = [isi_array]
 atur namaObjek.atribut = nilai
@@ -21,7 +21,7 @@ atur :nama:[indeks]: = nilai
    ```
 
    Contoh:
-   ```pearl
+   ```earl
    atur :nama: = "Andi"
    atur :usia: = 25
    ```
@@ -36,13 +36,13 @@ atur :nama:[indeks]: = nilai
    ```
 
 2. Menyimpan Array
-   ```pearl
+   ```earl
    atur :daftar: = [1, 2, 3]
    ```
    Menyimpan array ke dalam variabel `daftar`.
 
 3. Menyimpan Blok Kode
-   ```pearl
+   ```earl
    atur :blok: (
        tampilkan "Ini blok kode"
    )
@@ -56,19 +56,19 @@ atur :nama:[indeks]: = nilai
    ```
 
    Contoh:
-   ```Pearl
+   ```earl
    atur hapus :usia: konfirmasi
    ```
    Tanpa kata `konfirmasi`, variabel tidak akan dihapus. Wajib menambahkan `konfirmasi` untuk alasan keamanan.
 
 5. Mengatur Nilai Array Berdasarkan Indeks
-   ```pearl
+   ```earl
    atur :daftar[1]: = 99
    ```
    Mengganti isi indeks ke-1 dari array `daftar` menjadi `99`.
 
 6. Mengatur Atribut dari Instance Objek
-   ```pearl
+   ```earl
    atur orang.nama = "Siti"
    ```
    Mengubah atribut `nama` dari instance `orang`.
@@ -81,7 +81,7 @@ Catatan tambahan:
 - Gunakan `:` di awal dan akhir nama variabel untuk mengaksesnya, contoh: `:x:`.
 - Untuk menyimpan data kompleks seperti array dan objek, gunakan tanda `[` `]` dan `(` `)`.
 - Saat menyimpan objek:
-  ```pearl
+  ```earl
   atur :data: = (nama: "Ani", usia: 20)
 - Nilai bisa berupa:
   - Angka, `25`
@@ -90,7 +90,7 @@ Catatan tambahan:
   - Daftar, `[1, 2, 3]` (didukung)
 
 ## Contoh Lengkap
-```pearl
+```earl
 atur :angka: = 7
 atur :teks: = "Halo"
 atur :data: = (id: 1, nama: "Udin")
