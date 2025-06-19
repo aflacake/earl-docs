@@ -3,7 +3,7 @@ Modul ini digunakan untuk melihat isi variabel dan memeriksa keadaan program saa
 
 # Cara Pakai
 Gunakan perintah:
-```pearl
+```earl
 periksa [opsi]
 ```
 Opsi yang tersedia:
@@ -16,7 +16,7 @@ Opsi yang tersedia:
 - `nama_kelas`, Menampilkan info atribut dan instance dari kelas `nama_kelas`.
 
 Contoh Penggunaan:
-```pearl
+```earl
 -- Menampilkan semua isi memory --
 periksa
 
