@@ -3,7 +3,7 @@ Adalah tempat penyimpanan semua data sementara selama program berjalan ini semac
 
 ## Contoh Isi `memory`
 Setelah menjalankan ini:
-```pearl
+```earl
 atur :nama: = "Budi"
 daftar buat :angka:
 daftar tambah :angka: 10
