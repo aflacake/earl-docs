@@ -2,14 +2,14 @@
 Melakukan perhitungan matematika dan menyimpan hasilnya ke dalam variabel.
 
 ## Sintaks
-```pearl
+```earl
 hitung ke :nama_variabel: dari (ekspresi)
 ```
 - `nama_variabel`, Tempat hasil disimpan (tanpa spasi).
 - `ekspresi`, Perhitungan matematika di dalam tanda kurung.
 
 ## Contoh:
-```pearl
+```earl
 hitung ke :hasil: dari (5 + 3 * 2)
 ```
 Akan menyimpan `11` ke variabel `hasil`.
@@ -21,7 +21,7 @@ Akan menyimpan `11` ke variabel `hasil`.
 - Panjang daftar: `panjang :nama_daftar:`
 
 Contoh dengan variabel dan fungsi:
-```pearl
+```earl
 hitung ke :luas: dari (3.14 * :r: * :r:)
 hitung ke :akar: dari (sqrt(16))
 ```
