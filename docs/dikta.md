@@ -1,8 +1,8 @@
 # `dikta`
-`dikta` adalah perintah di Pearl untuk membuat kamus (_dictionary_), yaitu struktur data berisi pasangan **kunci dan nilai**.
+`dikta` adalah perintah di Earl untuk membuat kamus (_dictionary_), yaitu struktur data berisi pasangan **kunci dan nilai**.
 
 ## Contoh Sederhana
-```pearl
+```earl
 dikta :huruf: a A b B c C
 ```
 Hasil:
@@ -15,7 +15,7 @@ memory['huruf'] = {
 ```
 
 # Format Dasar
-```pearl
+```earl
 dikta :nama: kunci1 nilai1 kunci2 nilai2 ...
 ```
 Penjelasan:
@@ -24,7 +24,7 @@ Penjelasan:
 - `nilai`, Isi dari kunci tersebut
 
 # Contoh kamus Alfabet Otomatis
-```pearl
+```earl
 dikta :huruf:
 ```
 Ini akan membuat huruf a-Z dan A-Z secara otomatis:
@@ -35,7 +35,7 @@ memory['huruf'] = {
 ```
 
  # Kamus Bersarang (_Nested_)
-```pearl
+```earl
 dikta :data: nama { depan Ani belakang Budi } umur 20
 ```
 
