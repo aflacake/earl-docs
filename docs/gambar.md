@@ -1,15 +1,15 @@
 # `gambar`
-Memungkinkan kamu menggambar bentuk dasar ke kanvas menggunakan perintah dalam bahasa Pearl.
+Memungkinkan kamu menggambar bentuk dasar ke kanvas menggunakan perintah dalam bahasa Earl.
 
 ## Perintah yang tersedia
 1. `gambar buat-kanvas <lebar> <tinggi>`
    Membuat kanvas baru dengan ukuran yang disesuaikan.
-   ```pearl
+   ```earl
    gambar buat-kanvas 400 300
    ```
 2. `gambar warna "<nama_warna/hex>"`
    Mengatur warna isian dan garis.
-   ```pearl
+   ```earl
    gambar warna "red
    ```
 3. `gambar mode <isi|garis|isi-garis>
@@ -17,12 +17,12 @@ Memungkinkan kamu menggambar bentuk dasar ke kanvas menggunakan perintah dalam b
    - `isi`: Hanya isi.
    - `garis`: Hanya garis tepi.
    - `isi-garis`: Keduanya.
-   ```pearl
+   ```earl
    gambar mode garis
    ```
 4. `gambar kotak <x> <y> <w> <h>`
    Atau gunakan daftar:
-   ```pearl
+   ```earl
    gambar kotak :data:
    ```
    Menggambar persegi panjang.
@@ -51,7 +51,7 @@ Memungkinkan kamu menggambar bentuk dasar ke kanvas menggunakan perintah dalam b
 
 Tips Tambahan
 - Kamu bisa simpan daftar koordinat di memori dan pakai dalam perintah gambar:
-  ```pearl
+  ```earl
   daftar titik : 50 60 200 120 100 200
   gambar poligon :titik:
   ```
