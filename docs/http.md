@@ -2,7 +2,7 @@ Modul ini memungkinkan Anda **mengambil** atau **mengirim data** dari dan ke ser
 
 ## `ambildata`
 Sintaks:
-```pearl
+```earl
 ambildata "https://url-api.com" ke :nama_variabel: [opsi]
 ```
 
@@ -15,13 +15,13 @@ Penjelasan:
   - `header "Authorization: Bearer token"`, Header tambahan.
  
 ### Contoh:
-```pearl
+```earl
 ambildata "https://api.example.com/data" ke :respon: coba 2 bataswaktu 3000
 ```
 
 ## `kirimdata`
 Sintaks:
-```pearl
+```earl
 kirimdata "https://url-api.com" :data: [opsi] ke :nama_variabel:
 ```
 
@@ -34,12 +34,12 @@ Penjelasan:
 
 ### Contoh:
 Kirim data sebagai JSON:
-```pearl
+```earl
 kirimdata "https://api.example.com/post" :dataku: sebagai "json" method POST ke :respon:
 ```
 
 Upload file:
-```pearl
+```earl
 kirimdata "https://api.example.com/upload" :info: upload "gambar.png" file ke :respon:
 ```
 
