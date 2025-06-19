@@ -97,7 +97,7 @@ atur :data: = (id: 1, nama: "Udin")
 atur :list: = [1, 2, 3, 4, 5]
 
 atur :list[2]: = 99
-atur :blok: (
+atur blok (
     tampilkan :angka:
     tampilkan :teks:
 )
