@@ -10,11 +10,12 @@
    - Tidak boleh ada kode lain di baris tersebut.
 2. Komentar Multi-baris: `/--...--/`
    Contoh:
-   ```pearl
+   ```earl
    /--
    Ini komentar panjang
    yang bisa terdiri dari
    beberapa baris
+   --/
    ```
    Ciri-ciri:
    - Komentar harus **dimulai dengan** `/--` di satu baris.
