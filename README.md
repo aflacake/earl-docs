@@ -3,29 +3,29 @@
 
 <p align="right">Bahasa: Indonesia</p>
 
-# Dokumentasi Pearl
-**Pearl** adalah bahasa pemrograman eksperimental yang dirancang agar mudah dibaca, mudah ditulis, dan fleksibel untuk berbagai kebutuhan seperti otomatisasi sederhana, logika kondisional, pemrosesan data, serta pembuatan struktur modular.
+# Dokumentasi Earl
+**Earl** adalah bahasa pemrograman eksperimental yang dirancang agar mudah dibaca, mudah ditulis, dan fleksibel untuk berbagai kebutuhan seperti otomatisasi sederhana, logika kondisional, pemrosesan data, serta pembuatan struktur modular.
 
-Pearl dibangun menggunakan Node.js, dengan pendekatan berbasis modul. Setiap perintah utama dalam Pearl diimplementasikan sebagai modul atau fungsi terpisah.
+Earl dibangun menggunakan Node.js, dengan pendekatan berbasis modul. Setiap perintah utama dalam Pearl diimplementasikan sebagai modul atau fungsi terpisah.
 
 ## Fitur Utama:
 - Sintaks yang sederhana dan mudah dipahami
 - Pendekatan modular
-- Mendukung eksekusi `.pearl` maupun mode REPL
+- Mendukung eksekusi `.earl` maupun mode REPL
 - Cocok untuk pembelajaran mengenai interpreter, tokenisasi, dan ekseskusi perintah baris demi baris.
 
 ## Contoh Penggunaan:
 1. Menampilkan teks ke layar:
-   ```pearl
+   ```earl
    tampilkan "Halo Dunia!"
    ```
 2. Menyimpan dan menggunakan variabel
-   ```bash
+   ```earl
    masukkan :nama:
    tampilkan :nama:
    ```
 4. Perulangan sederhana:
-   ``` pearl
+   ```earl
    masukkan :n: 5
    ulangi :n: {
      tampilkan "Perulangan ke-" :index:
@@ -33,10 +33,10 @@ Pearl dibangun menggunakan Node.js, dengan pendekatan berbasis modul. Setiap per
    selesai
    ```
 
-# Cara Menjalankan Pearl
-Untuk menjalankan kode Pearl dari file `.pearl`, gunakan perintah:
+# Cara Menjalankan Earl
+Untuk menjalankan kode Earl dari file `.earl`, gunakan perintah:
 ```bash
-node index.js nama_file.pearl
+node index.js nama_file.earl
 ```
 
 Jika ingin mencoba secara langsung dalam mode interaktif (REPL), cukup jalankan:
@@ -46,9 +46,9 @@ node index.js
 Lalu ketik perintah langsung di terminal. Ketik `keluar` untuk menghentikan REPL.
 
 # Instalasi dan Pengembangan
-Karena Pearl berbasis Node.js, kamu hanya perlu:
+Karena Earl berbasis Node.js, kamu hanya perlu:
 ```bash
-git clone https://github.com/aflacake/pearl
-cd pearl
+git clone https://github.com/aflacake/earl-lang
+cd earl-lang
 npm install
 ```
