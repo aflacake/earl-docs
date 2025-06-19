@@ -53,7 +53,7 @@ atur :info: = (nama: "Rani", usia: 20)
 ambil :x: dari :angka:
 ambil :umur: dari :info: usia
 
-atur :user: (
+atur user (
     nama: "Fajar"
 )
 
