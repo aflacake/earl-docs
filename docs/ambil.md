@@ -1,95 +1,67 @@
 # `ambil`
-Fungsi `ambil` bertugas untuk mengambil nilai dari suatu sumber dan menyimpannya pada variabel target di `memory`. Nilai tersebut bisa berasal dari variabel lain, objek yang terdapat di dalam `memory`, atau atribut dari instance kelas.
+Fungsi `ambil` bertugas untuk **mengisi nilai ke variabel dari sumber lain** yang sudah tersedia dalam memori, seperti:
+- Variabel biasa.
+- _Array_.
+- Objek.
+- Atribut dari instance objek.
+- Nilai dalam _dictionary_ (disebut "dikta").
 
-## Format perintah
+## Format Umum
 ```pearl
-ambil :targetVar: dari :sumber:
+ambil :tujuan: dari sumber
 ```
-- `:targetVar:`: Nama variabel target tempat nilai akan disalin di dalam `memory`.
-- `sumber`: Sumber nilai yang bisa berupa:
-   - Variabel lain yang disimpan di dalam memory (misalnya `:varName:`).
-   - Nilai yang ada dalam sebuah objek atau instance kelas (misalnya `instanceName.atribut`).
-   - Nilai langsung yang ada di `memory` (misalnya nama variabel).
 
-## Langkah-langkah Pengecekan dan Pemrosesan
-1. Validasi Format Perintah:
-   - Fungsi memeriksa apakah perintah mengikuti format yang benar: `ambil :var: dari sumber`
-   - Jika format salah, akan muncul pesan kesalahan
-2. Pengambilan Nilai:
-   - Jika sumber adalah sebuah instance kelas dengan atribut:
-     - Misalnya `:instanceName: :atributName:`.
-     - Periksa apakah `instanceName` ada di dalam `memory`, dan apakah itu merupakan objek yang dimiliki tipe kelas.
-     - Periksa apakah atribut (`atributName`) ada didalam kelas tersebut.
-     - Jika semua valid, ambil nilai dari atribut dan simpan ke dalam variabel target.
-   - Jika sumber adalah varibel:
-     - Periksa apakah nilai varibel (misalnya `:varName:` ada di dalam `memory`.
-     - Jika variabel adalah objek (bukan daftar atau _array_) dan ada kunci tambahan yang diberikan (mislanya, tokens[4]), periksa apakah kunci tersebut ada dalam objek tersebut.
-     - Jika tidak ada kunci atau variabel, muncul tampilan pesan kesalahan.
-3. Penyimpanan Nilai:
-   - Nilai yang diambil dari sumber disalin ke dalam variabel target yang di tentukan di `memory`.
-4. Pesan Log:
-   - Fungsi mencetak pesan di konsol yang menunjukkan variabel target yang diisi dari sumber yang ditentukan beserta nilainya.
-  
-## Contoh Penggunaan
-1. Mengambil Nilai dari Variabel Lain:
+## Format
+1. Ambil dari Variabel Biasa
    ```pearl
-   ambil :x: dari :y:
+   ambil :x: dari :a:
    ```
-   ini akan mengambil nilai yang ada pada `:y:` dan menyimpannya ke dala `:x:`.
+   Mengambil nilai dari `:a:` dan menyimpannya ke variabel `:x:`.
 
-2. Mengambil Nilai dari Atribut dalam Instance Kelas:
-   Misalnya, jika `memory` berisi objek `person` yang memiliki atribut `name`:
+2. Ambil Seluruh _Array_
    ```pearl
-   ambil :personNmae: dari :person.name:
+   ambil :data: dari :daftar:
    ```
-   Ini akan mengambil nilai dari atribut `name` di dalam objek `person` dan menyimpannya ke dalam variabel `:personName:`.
+   Jika `:daftar:` adalah array, maka seluruh isi array diambil.
 
-3. Mengambil Nilai dari Objek:
-   Jika sebuah objek disimpan di `memory` dan kamu ingin mengakses nilai dari kunci tertentu, misalnya:
+3. Ambil Atribut dari Instance Objek
    ```pearl
-   ambil :address: dari :user.address.street:
+   ambil :nama: dari user.nama
    ```
-   Jika `user` adalah sebuah objek dan memiliki atribut `address` yang memiliki kunci `street`, maka nilai dari `street` akan disalin ke dalam `:address:`.
+   Mengambil atribut `:nama:` dari instance `user`.
 
-4. Mengambil Nilai Langsung dari `memory`:
+4. Ambil Nilai dari Dikta (_dictionary_)
    ```pearl
-   ambil :z: dari :a:
+   ambil :nilai: dari :info: usia
    ```
-   Ini akan menyalin nilai dari variabel `:a:` yang sudah ada didalam memory ke dalam `:z:`.
+   Jika `:info:` adalah objek `{ usia: 30 }`, maka `:nilai:` akan berisi `30`.
 
-## Pesan Kesalahan yang Dapat Ditemui:
-- Format salah:
-  ```bash
-  Format salah. Gunakan: ambil :var: dari sumber
-  ```
+## Validasi & Pesan Kesalahan
+Modul ini juga:
+- Memeriksa apakah sumber data ada di lingkup atau memori global.
+- Menampilkan pesan kesalahan jika:
+  - Format salah.
+  - Variabel tidak ditemukan.
+  - Atribut tidak valid.
+  - Akses ke dikta gagal.
+ 
+## Contoh lengkap
+```pearl
+atur :angka: = 100
+atur :info: = (nama: "Rani", usia: 20)
 
-- Instance atau Kelas Tidak Ditemukan:
-  ```bash
-  Instance 'namaInstance' tidak ditemukan.
-  ```
+ambil :x: dari :angka:
+ambil :umur: dari :info: usia
 
-- Kelas Tidak Valid:
-  ```bash
-  'namaKelas' buka kelas yang valid.
-  ```
+atur :user: (
+    nama: "Fajar"
+)
 
-- Atribut Tidak Ditemukan di dalam Kelas:
-  ```bash
-  Atribut 'namaAtribut' tidak didefinisikan di kelas 'namaKelas'.
-  ```
+ambil :namaUser: dari user.nama
+```
 
-- Variabel Tidak Ditemukan:
-  ```bash
-  Variabel :namaVar: tidak ditemukan.
-  ```
-
-- Kunci Tidak Ditemukan di dalam Objek
-  ```bash
-  Kunci 'namaKunci' tidak ditemukan di dikta 'namaVar'.
-  ```
-
-Catatan:
-- Jika `sumber` adalah objek dan perintah mengakses kunci tertentu, pastikan bahwa kunci tersebut ada di dalam objek. Jika tidak, pesan kesalahan akan muncul.
-- Fungsi ini juga menangani sumber yang berupa instance dari kelas dan akses ke atribut di dalamnya.
+## Fungsi Internal
+- `cariDariLingkup(nama)`, Mencari variabel dari dalam lingkup saat ini atau dari `memory`.
+- `ambilDaftarJikaPerlu(sumber)`, Mengecek apakah `sumber` adalah nama _array_ valid dalam format `:nama:`.
 
 Dokumentasi ini diharapkan dapat memberikan gambaran yang jelas tentang bagaimana modul `ambil.js` bekerja dan bagaimana cara menggunakannya di dalam skrip Pearl.
