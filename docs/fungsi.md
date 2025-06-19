@@ -1,8 +1,8 @@
 # `fungsi`
-`fungsi` digunakan untuk membuat **fungsi sendiri** di Pearl. Fungsi ini bisa dipanggil berkali-kali dengan parameter yang berbeda, seperti bahasa pemrograman pada umumnya.
+`fungsi` digunakan untuk membuat **fungsi sendiri** di Earl. Fungsi ini bisa dipanggil berkali-kali dengan parameter yang berbeda, seperti bahasa pemrograman pada umumnya.
 
 ## Format Penulisan
-```pearl
+```earl
 fungsi namaFungsi(param1, param2)
 (
    -- isi kode fungsi ---
@@ -12,14 +12,14 @@ fungsi namaFungsi(param1, param2)
 - Gunakan kembalikan nilai untuk mengembalikan hasil dari fungsi
 
 ## Contoh Fungsi Menyapa
-```pearl
+```earl
 fungsi halo(nama)
 (
   tampilkan "Halo, " nama
 )
 ```
 Pemanggilan:
-```pearl
+```earl
 Halo "Dunia"
 ```
 Keluaran:
@@ -28,14 +28,14 @@ Halo, Dunia
 ```
 
 ## Contoh Fungsi Kembalikan
-```pearl
+```earl
 fungsi tambah(a, b)
 (
   kembalikan a + b
 )
 ```
 Eksekusi:
-```pearl
+```earl
 evaluasi tambah 5 4
 ```
 Keluaran:
