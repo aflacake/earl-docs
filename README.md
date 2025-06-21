@@ -32,7 +32,6 @@ Earl dibangun menggunakan Node.js, dengan pendekatan berbasis modul. Setiap peri
    (
      tampilkan "Perulangan berdasarkan variabel!
    )
-   selesai
    ```
 
 # Cara Menjalankan Earl
