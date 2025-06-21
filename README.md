@@ -26,10 +26,12 @@ Earl dibangun menggunakan Node.js, dengan pendekatan berbasis modul. Setiap peri
    ```
 4. Perulangan sederhana:
    ```earl
-   masukkan :n: 5
-   ulangi :n: {
-     tampilkan "Perulangan ke-" :index:
-   }
+   :jumlah: = 2
+
+   ulangi :jumlah:
+   (
+     tampilkan "Perulangan berdasarkan variabel!
+   )
    selesai
    ```
 
