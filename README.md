@@ -26,7 +26,7 @@ Earl dibangun menggunakan Node.js, dengan pendekatan berbasis modul. Setiap peri
    ```
 4. Perulangan sederhana:
    ```earl
-   :jumlah: = 2
+   atur :jumlah: = 2
 
    ulangi :jumlah:
    (
