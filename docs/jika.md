@@ -2,7 +2,7 @@
 Modul `jika` digunakan untuk membuat percabangan logika dalam program Earl. Fungsinya mirip dengan `if` di bahasa pemrograman lain. Ia menjalankan perintah tertentu hanya jika kondisi terpenuhi (benar atau _true_).
 
 ## Format Umum
-```bash
+```txt
 jika <kiri> <operator> <kanan> maka <perintah> [argumen]
 ```
 
