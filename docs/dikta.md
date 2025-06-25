@@ -15,7 +15,7 @@ memory['huruf'] = {
 ```
 
 # Format Dasar
-```earl
+```txt
 dikta :nama: kunci1 nilai1 kunci2 nilai2 ...
 ```
 Penjelasan:
