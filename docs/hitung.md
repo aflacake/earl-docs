@@ -2,7 +2,7 @@
 Melakukan perhitungan matematika dan menyimpan hasilnya ke dalam variabel.
 
 ## Sintaks
-```earl
+```txt
 hitung ke :nama_variabel: dari (ekspresi)
 ```
 - `nama_variabel`, Tempat hasil disimpan (tanpa spasi).
