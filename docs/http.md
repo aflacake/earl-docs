@@ -2,7 +2,7 @@ Modul ini memungkinkan Anda **mengambil** atau **mengirim data** dari dan ke ser
 
 ## `ambildata`
 Sintaks:
-```earl
+```txt
 ambildata "https://url-api.com" ke :nama_variabel: [opsi]
 ```
 
