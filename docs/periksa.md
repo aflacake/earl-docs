@@ -3,7 +3,7 @@ Modul ini digunakan untuk melihat isi variabel dan memeriksa keadaan program saa
 
 # Cara Pakai
 Gunakan perintah:
-```earl
+```txt
 periksa [opsi]
 ```
 Opsi yang tersedia:
