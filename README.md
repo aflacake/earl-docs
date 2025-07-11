@@ -31,12 +31,12 @@ Earl dibangun menggunakan Node.js, dengan pendekatan berbasis modul. Setiap peri
    atur :jumlah: = 2
 
    ulangi :jumlah:
-   (
      tampilkan "Perulangan berdasarkan variabel!
-   )
+   selesai
    ```
 
 # Cara Menjalankan Earl
+## Dengan Node.js
 Untuk menjalankan kode Earl dari file `.earl`, gunakan perintah:
 ```bash
 node index.js nama_file.earl
@@ -48,10 +48,36 @@ node index.js
 ```
 Lalu ketik perintah langsung di terminal. Ketik `keluar` untuk menghentikan REPL.
 
+### Bahan dari Pihak Ketiga
+- Menginstal paket tambahan di Node.js untuk keperluan merender visual atas perintah aturan 'gambar' dengan
+  ```bash
+  npm install canvas
+  ```
+- Menginstal `chalk` pustaka untuk memberi warna pada teks terminal.
+  ```bash
+  npm install chalk@4
+  ```
+- Menginstal `form-data` untuk memuat request HTTP yang mengandung form data, biasanya untuk `multipart/formdata`, misalnya kirim file lewat `fetch`, `axios`, atau `http.request`.
+  ```bash
+  npm install form-data
+  ```
+
 # Instalasi dan Pengembangan
 Karena Earl berbasis Node.js, kamu hanya perlu:
 ```bash
 git clone https://github.com/aflacake/earl-lang
 cd earl-lang
 npm install
+```
+## npm
+```bash
+npm install github:aflacake/earl-lang
+```
+Atau
+```bash
+npm install earl-lang@2.0.3
+```
+Atau juga
+```bash
+npm i earl-lang
 ```
