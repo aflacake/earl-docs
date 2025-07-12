@@ -1,61 +1,68 @@
 # `daftar`
-Fungsinya digunakan untuk mengelola data **daftar (_array_)** , seperti membuat, menambah, mengambil, menghapus, dan menggabungkan elemen.
+Modul ini menyediakan perintah untuk mengelola variabel bertipe daftar (_array_) dalam memori. Dengan modul ini, pengguna bisa membuat, memanipulasi, dan mengambil elemen dari daftar.
 
-## Perintah yang Didukung:
-1. Buat Daftar:
+## Sintaks dan Perintah:
+1. Buat daftar baru
    ```earl
-   daftar buat :namadaftar:
+   daftar buat :nama_daftar:
    ```
-   Membuat daftar kosong.
-2. Tambah ke Daftar
+   Membuat daftar kosong dengan nama varaibel `nama_daftar`.
+2. Cek panjang daftar
    ```earl
-   daftar tambah :namadaftar: "nilai"
-   ```
-   Menambahkan nilai ke akhir daftar.
-3. Panjang Daftar
-   ```earl
-   daftar panjang :namadaftar:
+   daftar panjang :nama_daftar:
    ```
    Menampilkan jumlah elemen dalam daftar.
-4. Pop (hapus terakhir)
+3. Tambah elemen ke daftar
    ```earl
-   daftar hapuspop :namadaftar:
+   daftar tambah :nama_daftar: nilai
    ```
-   Menghapus elemen terakhir dari daftar
-5. Gabungkan Dua Daftar\
-   Tujuannya menggabungkan dua daftar menjadi satu.
+   Menambahkan nilai ke akhir daftar.
+4. Hapus elemen terakhir (pop)
    ```earl
-   daftar gabung :daftarA: :daftarB: :hasil:
+   daftar hapuspop :nama_daftar:
    ```
-   Gabungkan `daftarA` dan `daftarB` ke daftar baru bernama `hasil`.
-6. Sisipkan di Posisi Tertentu\
-   Tujuannya menyisipkan nilai di posisi tertentu.
+   Menghapus elemen terakhir dari daftar.
+5. Gabung dua daftar
    ```earl
-   daftar sisip :namadaftar: index "nilai:
+   daftar gabung :daftarA: :daftarB: :daftarHasil:
    ```
-   Menyisipkan nilai ke posisi tertentu dalam daftar.
-7. Hapus Elemen Tertentu
+   Menggabungkan dua `daftarA` dan `daftarB` menjadi daftar baru `daftarHasil`.
+6. Ambil elemen dari daftar bersarang
    ```earl
-   daftar hapus :namadaftar: index
+   daftar ambil :nama_daftar: indeks1 [indeks2 ...]
    ```
-   Menghapus elemen di posisi tertentu.
-8. Ambil Daftar\
-   Tujuannya mengambil elemen dari daftar (bisa daftar bersarang).
+   Mengambil elemen dari daftar, bisa untuk daftar bersarang dengan indeks bertingkat.
+7. Sisipkan elemen pada indeks tertentu
    ```earl
-   daftar ambil :belanja: 0
+   daftar sisip :nama_daftar: indeks nilai
    ```
-   Menampilkan elemen pertama dari daftar `:belanja:`
+   Menyisipkan `nilai` pada posisi `indeks` dalam daftar.
+8. Hapus elemen pada indeks tertentu
    ```earl
-   daftar ambil :data: 1 2
+   daftar hapus :nama_daftar: indeks
    ```
-   Untuk bersarang: `:data:[1][2]`
-   
+   Mengahpus elemen pada posisi `indeks` dalam daftar.
 
-Catatan Tambahan:
-- Semua nama variabel daftar harus menggunakan tanda `:dua titik:`.
-- String harus diapit tandakutip `"..."`.
-- Nilai juga bisa berupa variabel lain, contoh:
-  ```earl
-  daftar tambah :data: :isi:
-  ```
-  Semua nilai juga bisa berasal dari variabel. Ini akan menambahkan nilai dari variabel `:isi:` ke daftar `:data:`.
+## Contoh:
+```earl
+daftar buat :buah:
+daftar tambah :buah: "apel"
+daftar tambah :buah: "jeruk"
+
+-- Keluaran: 2 --
+daftar panjang :buah:
+
+-- Keluaran: jeruk --
+daftar ambil :buah: 1
+
+daftar hapuspop :buah:
+
+-- Keluaran: 1 --
+daftar panjang :buah:
+```
+
+## Catatan:
+- Semua nama daftar harus dibungkus dengan tanda `:` misalnya `:buah:`.
+- Nilai bisa berupa _string_ atau teks (dengan tanda kutip `"`), angka, atau variabel lain.
+- Indeks dimulai dari 0.
+- Pastikan daftar sudah dibuat sebelum digunakan.
