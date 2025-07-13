@@ -1,58 +1,91 @@
 # `gambar`
-Memungkinkan kamu menggambar bentuk dasar ke kanvas menggunakan perintah dalam bahasa Earl.
-
-## Perintah yang tersedia
-1. `gambar buat-kanvas <lebar> <tinggi>`
-   Membuat kanvas baru dengan ukuran yang disesuaikan.
-   ```earl
-   gambar buat-kanvas 400 300
-   ```
-2. `gambar warna "<nama_warna/hex>"`
-   Mengatur warna isian dan garis.
-   ```earl
-   gambar warna "red
-   ```
-3. `gambar mode <isi|garis|isi-garis>
-   Mengatur mode menggambar:
-   - `isi`: Hanya isi.
-   - `garis`: Hanya garis tepi.
-   - `isi-garis`: Keduanya.
-   ```earl
-   gambar mode garis
-   ```
-4. `gambar kotak <x> <y> <w> <h>`
-   Atau gunakan daftar:
-   ```earl
-   gambar kotak :data:
-   ```
-   Menggambar persegi panjang.
-5. `gambar lingkaran <x> <y> <radius>`
-   Atau:
-   ```pearl
-   gambar lingkaran :lingkaran1:
-   ```
-   Menggambar lingkaran.
-6. `gambar garis <x1> <y1> <x2> <y2>`
-   Menggambar garis lurus dari titik A ke titik B.
-7. `gambar poligon <x1> <y1> <x2> <y2> ...>`
-   Pola harus minimal 3 titik (6 angka). Bisa juga dari daftar.
-8. `gambar teks "<isi>" <x> <y>`
-   Menampilkan posisi tertentu.
-9. `gambar huruf "<gaya_font>"`
-    Mengatur font teks (misal: `"30px Verdana"`).
-10. `gambar rata <left|center|right>`
-    Mengatur perataan teks horizontal.
-11. `gambar dasar <top|middle|bottom|alphabetic>`
-    Mengatur dasar garis teks vertikal
-12. `gambar simpan "<nama_file.png>"`
-    Menyimpan kanvas ke file PNG.
-13. `gambar hapus-canvas`
-    Membersihkan isi kanvas, ini menghapus seluruh isi yang ada di kanvas.
-
-Tips Tambahan
-- Kamu bisa simpan daftar koordinat di memori dan pakai dalam perintah gambar:
-  ```earl
-  daftar titik : 50 60 200 120 100 200
-  gambar poligon :titik:
-  ```
+Modul ini menangani perintah menggambar menggunakan **Canvas**. Modul ini digunakan untuk membuat, menggambar bentuk, teks, dan menyimpan gambar ke file PNG.
   
+## Persyaratan:
+- Modul `canvas` (harus diinstal).
+- File ini tergantung pada `memory.js` dan `utiliti.js`.
+
+## Konsep Dasar:
+Sebelum bisa menggambar, **kanvas** harus dibuat terlebih dahulu.
+```earl
+gambar buat-kanvas 800 600
+```
+
+## Contoh Lengkap:
+```earl
+gambar buat-kanvas 400 300
+gambar warna "green"
+gambar mode isi-garis
+gambar kotak 50 50 100 100
+gambar lingkaran 200 150 40
+gambar teks "Selesai" 150 280
+gambar simpan "gambar1.png"
+```
+
+## Daftar Perintah:
+1. `buat-kanvas <lebar> <tinggi>`
+   Membuat kanvas kosong dengan ukuran tertentu.
+   Contoh: `gambar buat-kanvas 400 300`.
+
+2. `warna "<nama_warna>"`
+   Mengatur warna isi dan garis.
+   Contoh: `gambar warna "red"`.
+
+3. `mode <isi|garis|isi-garis>`
+   Menentukan mode penggambaran:
+   - `isi`, isi penuh.
+   - `garis`, hanya garis luar.
+   - `isi-garis`, keduanya.
+   Contoh: `gambar mode garis`.
+
+4. Bentuk
+   - `kotak <x> <y> <w> <h>`
+     Menggambar persegi panjang.
+     Contoh: `gambar kotak 10 10 100 50`.
+   - `lingkaran <x> <y> <radius>`
+     Menggambar lingkaran.
+     Contoh: `gambar lingkaran 200 150 40`.
+   - `poligon <x1> <y1> <x2> <y2> ...`
+     Menggambar poligon tertutup dari minimal 3 titik.
+     Contoh: `gambar poligon 10 10 100 10 100 50 10 50`.
+   - `garis <x1> <y1> <x2> <y2>`
+     Menggambar garis dari titik A ke B.
+     Contoh: `gambar garis 0 0 100 100`.
+
+5. Teks
+   - `teks "<isi_teks>" <x> <y>`
+     Menulis teks ke kanvas.
+     Contoh: `gambar teks "Halo Dunia" 50 50`.
+   - `huruf "<gaya_font>"`
+     Mengubah gaya huruf.
+     Contoh: `gambar huruf "bold 30px Courier"`.
+   - `rata <left|right|center|start|end>`
+     Atur perataan horizontal teks.
+     Contoh: `gambar rata center`.
+   - `dasar <top|middle|alphabetic|bottom>`
+     Atur posisi vertikal teks.
+     Contoh: `gambar dasar bottom`.
+
+6. Warna Spesifik
+   - `warna-isi "<warna>"`
+     Atur hanya warna isi.
+     Contoh: `gambar warna-isi "blue"`.
+   - `warna-garis "<warna>"`
+     Atur hanya warna garis.
+     Contoh: `gambar warna-garis "black"`.
+
+7. Utilitas
+   - `hapus-canvas`
+     Menghapus isi kanvas (mengisi ulang dengan warna putih).
+     Contoh: `gambar hapus-canvas`.
+   - `simpan "<nama_file.png>"`
+     Menyimpan gambar sebagai file PNG.
+     Contoh: `gambar simpan "hasil.png"`.
+   - `status`
+     Menampilkan status kanvas saat ini.
+     Contoh: `gambar status`.
+
+## Catatan:
+- Gunakan tanda kutip (`"..."`) untuk teks atau warna jika mengandung spasi.
+- Semua nilai angka harus valid.
+- Beberapa perintah bisa menerima daftar dari memori.
