@@ -1,54 +1,50 @@
 # `fungsi`
-`fungsi` digunakan untuk membuat **fungsi sendiri** di Earl. Fungsi ini bisa dipanggil berkali-kali dengan parameter yang berbeda, seperti bahasa pemrograman pada umumnya.
+Modul `fungsi` memungkinkan pengguna untuk mendefinisikan fungsi buatan sendiri di bahasa Earl, lengkap dengan parameter dan isi kode yang dapat dipanggil ulang.
 
-## Format Penulisan
+## Format Penulisan:
 ```earl
 fungsi namaFungsi(param1, param2)
-(
-   -- isi kode fungsi ---
-)
+  tampilkan :param1:
+  tampilkan :param2:
+selesai
 ```
-- Gunakan `(` dan `)` dibaris terpisah sebagai pembuka dan penutup blok fungsi
-- Gunakan kembalikan nilai untuk mengembalikan hasil dari fungsi
 
-## Contoh Fungsi Menyapa
+## Contoh Penggunaan:
 ```earl
-fungsi halo(nama)
-(
-  tampilkan "Halo, " nama
-)
-```
-Pemanggilan:
-```earl
-Halo "Dunia"
+fungsi sapa(nama)
+  tampilkan "Halo," :nama:
+selesai
+
+sapa "Earl"
 ```
 Keluaran:
 ```bash
-Halo, Dunia
+Halo, Earl
 ```
 
-## Contoh Fungsi Kembalikan
+
+## Cara Memanggil Fungsi:
 ```earl
-fungsi tambah(a, b)
-(
-  kembalikan a + b
-)
-```
-Eksekusi:
-```earl
-evaluasi tambah 5 4
-```
-Keluaran:
-```bash
-9
+namaFungsi "Halo" "Dunia"
 ```
 
-Aturan penting
-- Nama fungsi hanya boleh terdiri dari huruf, angka, dan `_`, dan tidak boleh diawali dengan angka.
-- Parameter dipisahkan dengan koma: (x, y, z).
-- Harus menggunakan tanda kurung `(` dan `)` untuk membungkus isi fungsi.
-- Fungsi disimpan sebagai modul sementara dan bisa langsung dipanggil setelah didefiniskan.
+## Cara Kerja:
+1. Deklarasi Fungsi:
+   - Didefinisikan dengan keyword `fungsi`.
+   - Nama fungsi diikuti parameter dalam tanda kurung.
+   - Setelah itu harus ada tanda kurung `(` sebagai pembuka blok kode.
+2. Isi Fungsi:
+   - Baris-baris perintah di dalam blok hingga kurung tutup `)`.
+3. Penyimpanan:
+   - AST fungsi disimpan dalam `memory.__fungsi_ast__`.
+   - Fungsi disimpan di _scope_ saat ini dan juga `modules` jika di _global scope_.
+4. Pemanggilan:
+   - Saat fungsi dipanggil, argumen dipetakan ke parameter.
+   - Fungsi dijalankan dalam konteks lingkup lokal baru (_local scope_).
 
-Tips
-- Simpan fungsi umum seperti `tambah`, `kalikan`, `format` dalam file `.pearl` dan impor jika dibutuhkan.
-- Gunakan `kembalikan` untuk menghentikan fungsi lebih awal dan memberi hasil.
+## Catatan:
+- Fungsi mendukung _nested scope_ dan dapat menggunakan variabel lokal.
+- Tokenisasi menggunakan `modules.tokenize`.
+- Fungsi bisa akses modul global dan fungsi lokal.
+- Return value disimpan di `localContext.return`.
+
