@@ -1,44 +1,37 @@
 # `jika`
-Modul `jika` digunakan untuk membuat percabangan logika dalam program Earl. Fungsinya mirip dengan `if` di bahasa pemrograman lain. Ia menjalankan perintah tertentu hanya jika kondisi terpenuhi (benar atau _true_).
+Modul `jika` berfungsi untuk menjalankan **percabangan kondisi** dalam bahasa Earl. Ini memungkinkan program untuk mengevaluasi kondisi dan menjalankan blok kode tertentu hanya jika kondisi tersebut terpenuhi (benar).
 
-## Format Umum
-```txt
-jika <kiri> <operator> <kanan> maka <perintah> [argumen]
-```
+## Fungsi Utama
+`async function jika(tokens, modules, context)`
+- Tujuan: mengecek kondisi logika dan jika terpenuhi, menjalankan blok kode `maka`.
+- Parameter:
+  - `tokens`, _array_ token yang berisi perintah `jika`, kondisi, dan kata kunci `maka`.
+  - `modules`, objek modul lain yang tersedia, termasuk fungsi untuk menjalankan AST (`laksanakanAST`).
+  - `context`, konteks eksekusi saat ini, berisi data dan status program.
+- Cara kerja:
+  1. Memastikan sintaks lengkap:
+     Format yang benar adalah:
+     `jika <nilai_kiri> <operator> <nilai_kanan> maka`
+  2. Mengambil nilai kiri dan kanan, lalu mengevaluasi berdasarkan operator (`==`, `!=`, `>`, `<`, `>=`, `<=`).
+  3. Jika hasil evaluasi benar (_true_), maka blok kode dibawah jika (setelah `maka`) dijalankan.
+- Blok kode:
+  Blok kode yang dijalankan berada dalam `context.currentNode.body` dan dieksekusi secara asinkron menggunakan `laksanakanAST`.
 
-Contoh:
+## Contoh Penggunaan dalam Kode Earl
 ```earl
-jika :nilai: > 80 maka tampilkan "Nilai kamu bagus!"
+atur :x: = 5
+jika :x: > 3 maka
+    tampilkan "Nilai x lebih besar dari 3"
+selesai
 ```
+Jika nilai variabel `x` lebih besar dari `3`, maka perintah `tampilkan` akan dijalankan dan mencetak pesan ke layar.
 
-### Parameter
-- `<kiri>`, nilai di sebelah kiri operator. Bisa berupa angka, _string_, atau variabel (`:nama:`).
-- `<opearator>`, operator pembanding: `==`, `!=`, `>`, `<`, `>=`, `<=`
-- `<kanan>`, nilai disebelah kanan operator.
-- `maka`, kata kunci wajib setelah kondisi.
-- `<perintah>`, nama perintah yang dijalankan jika kondisi benar (misal: `tampilkan`, `atur`, dll).
-- `[argumen]`, argumen tambahan untuk perintah tersebut.
+## Catatan
+- Kata kunci `maka` wajib ada setelah kondisi.
+- Blok kode percabangan harus diakhiri dengan `selesai`.
+- Mendukung operator perbandingan standar: `==`, `!=`, `>`, `<`, `>=`, `<=`.
+- Fungsi ini merupakan blok perintah (`jika.isBlock = true`), jadi mendukung eksekusi berisi beberapa baris kode.
 
-## Operator yang Didukung
-- `==`, sama dengan.
-- `!=`, tidak sama dengan.
-- `>`, lebih besar.
-- `<`, leih kecil.
-- `>=`, lebih besar atau sama.
-- `<=`, lebih kecil atau sama.
-
-## Contoh Penggunaan
-1. Cek nilai sederhana
-   ```earl
-   atur :angka: = 10
-   jika :angka: == 10 maka tampilkan "Angka benar1"
-   ```
-2. Dengan atribut _instance_ (objek)
-   ```earl
-   atur :pengguna.nama: = "Siti"
-   jika :pengguna.nama: == "Siti" maka tampilkan "Selamat datang, Siti~"
-   ```
-
-Catatan:
-- Token seperti `:variabel:` akan otomatis dicari nilainya dari memory.
-- Dukung juga pemanggilan atribut kelas seperti `:objek.nama:`.
+## Kegunaan
+- Membuat program Earl menjadi **dinamis** dengan kemampuan memilih jalur eksekusi berdasarkan kondisi tertentu
+- Membangun logika percabangan yang terpenting untuk hampir semua program dan skrip.
