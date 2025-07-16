@@ -1,7 +1,7 @@
 # `jika`
 Modul `jika` berfungsi untuk menjalankan **percabangan kondisi** dalam bahasa Earl. Ini memungkinkan program untuk mengevaluasi kondisi dan menjalankan blok kode tertentu hanya jika kondisi tersebut terpenuhi (benar).
 
-## Fungsi Utama
+## Fungsi Utama:
 `async function jika(tokens, modules, context)`
 - Tujuan: mengecek kondisi logika dan jika terpenuhi, menjalankan blok kode `maka`.
 - Parameter:
@@ -17,7 +17,7 @@ Modul `jika` berfungsi untuk menjalankan **percabangan kondisi** dalam bahasa Ea
 - Blok kode:
   Blok kode yang dijalankan berada dalam `context.currentNode.body` dan dieksekusi secara asinkron menggunakan `laksanakanAST`.
 
-## Contoh Penggunaan dalam Kode Earl
+## Contoh Penggunaan dalam Kode Earl:
 ```earl
 atur :x: = 5
 jika :x: > 3 maka
@@ -26,12 +26,12 @@ selesai
 ```
 Jika nilai variabel `x` lebih besar dari `3`, maka perintah `tampilkan` akan dijalankan dan mencetak pesan ke layar.
 
-## Catatan
+## Catatan:
 - Kata kunci `maka` wajib ada setelah kondisi.
 - Blok kode percabangan harus diakhiri dengan `selesai`.
 - Mendukung operator perbandingan standar: `==`, `!=`, `>`, `<`, `>=`, `<=`.
 - Fungsi ini merupakan blok perintah (`jika.isBlock = true`), jadi mendukung eksekusi berisi beberapa baris kode.
 
-## Kegunaan
+## Kegunaan:
 - Membuat program Earl menjadi **dinamis** dengan kemampuan memilih jalur eksekusi berdasarkan kondisi tertentu
 - Membangun logika percabangan yang terpenting untuk hampir semua program dan skrip.
