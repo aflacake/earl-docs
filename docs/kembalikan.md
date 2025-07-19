@@ -1,9 +1,9 @@
-# `kambalikan`
+# `kembalikan`
 Modul ini digunakan untuk mengembalikan nilai dari sebuah fungsi atau blok kode dalam bahasa Earl.
 
 ## Fungsi Utama:
 ### Deskripsi:
-- Menghentikan eksekusi fungsi/block saat ini dan mengirimkan nilai hasil kembali ke pemanggil.
+- Menghentikan eksekusi fungsi atau block saat ini dan mengirimkan nilai hasil kembali ke pemanggil.
 - Bisa mengembalikan satu nilai atau hasil evaluasi ekspresi matematika sederhana.
 
 ## Cara Kerja:
