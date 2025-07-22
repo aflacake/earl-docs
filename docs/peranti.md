@@ -19,7 +19,7 @@ Modul ini digunakan untuk mendapatkan informasi perangkat disk dari sistem opera
    peranti
    ```
 
-2. Contoh Kasus
+2. Contoh Kasus\
    Misalkan menjalankan perintah ini pada sistem operasi Windows dan Linux, keluaran yang akan muncul bisa berupa:
    
    Windows (win32)
