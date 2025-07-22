@@ -61,4 +61,4 @@ kelas :Anjing: mewarisi :Hewan:
         tampilkan "Anjing berlari!"
     selesai
 selesai
-``
+```
