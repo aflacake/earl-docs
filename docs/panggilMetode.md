@@ -18,13 +18,13 @@ Modul ini memungkinkan pengguna untuk memanggil metode pada _instance_ objek yan
    2. Metode Instance: Setelah menemukan _instance_, modul ini akan mencari apakah metode yang diminta ada di dalam kelas yang diacu oleh _instance_ tersebut. Metode dicari dalam objek `metode` yang ada pada kelas tersebut.
    3. Eksekusi Metode: Jika metode ditemukan, kode dari metode tersebut akan dieksekusi dalam konteks baru dengan variabel `ini` yang mengacu pada _instance_ yang dimaksud. Proses eksekusi ini menggunakan REPL (`runEarl`), dan variabel instance akan tersedia untuk digunakan dalam metode tersebut.
 
-  Contoh Penggunaan:
-  Jika memiliki kelas `Person` dengan metode `greet`, dapat memanggil metode `greet` pada _instance_ `person1` seperti berikut:
-  ```earl
-  panggilMetode :person1: greet
-  ```
+   Contoh Penggunaan:
+   Jika memiliki kelas `Person` dengan metode `greet`, dapat memanggil metode `greet` pada _instance_ `person1` seperti berikut:
+   ```earl
+   panggilMetode :person1: greet
+   ```
 
-2. Contoh Kasus:
+2. Contoh Kasus:\
    Misalkan memiliki kelas `Person` dengan struktur berikut:
    ```earl
    kelas :Person:
