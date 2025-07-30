@@ -4,18 +4,16 @@ Modul `fungsi` memungkinkan pengguna untuk mendefinisikan fungsi buatan sendiri 
 ## Format Penulisan:
 ```earl
 fungsi namaFungsi(param1, param2)
-(
   tampilkan :param1:
   tampilkan :param2:
-)
+selesai
 ```
 
 ## Contoh Penggunaan:
 ```earl
 fungsi sapa(nama)
-(
   tampilkan "Halo," :nama:
-)
+selesai
 
 sapa "Earl"
 ```
