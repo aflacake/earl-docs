@@ -53,7 +53,7 @@ Keluaran (verbose):
 }
 ```
 
-# Contoh 5: Menampilkan atribut objek
+### Contoh 5: Menampilkan atribut objek
 ```earl
 tampilkan :orang.nama:
 ```
