@@ -23,7 +23,7 @@ atur :nama_variabel: [nilai1 nilai2 nilai3 ...]
 - Variabel yang sudah diatur disimpan di `context.memory`.
 
 ## Contoh Penggunaan
-### Contoh 1: mengatur angka
+### Contoh 1: Mengatur angka
 ```earl
 atur :umur: = 25
 tampilkan :umur:
@@ -31,7 +31,7 @@ tampilkan :umur:
 
 Keluaran: `25`
 
-### Contoh 2: mengatur _string_
+### Contoh 2: Mengatur _string_
 ```earl
 atur :nama: = "Andi"
 tampilkan :nama:
@@ -39,7 +39,7 @@ tampilkan :nama:
 
 Keluaran: `"Andi"`
 
-### Contoh 3: mengatur _array_ dengan tanda sama dengan
+### Contoh 3: Mengatur _array_ dengan tanda sama dengan
 ```earl
 atur :angka: = [1, 2, 3, 4]
 tampilkan :angka:
@@ -47,7 +47,7 @@ tampilkan :angka:
 
 Keluaran: `1 2 3 4`
 
-### Contoh 4: mengatur _array_ tanpa tanda sama dengan
+### Contoh 4: Mengatur _array_ tanpa tanda sama dengan
 ```earl
 atur :buah: [apel pisang jeruk]
 tampilkan :buah:
@@ -55,7 +55,7 @@ tampilkan :buah:
 
 Kelauaran: `apel pisang jeruk`
 
-### Contoh 5: mengatur objek JSON
+### Contoh 5: Mengatur objek JSON
 ```earl
 atur :mobil: = {merk: "Toyota", tahun: 2020}
 tampilkan -v :mobil:
@@ -69,7 +69,7 @@ Keluaran (verbose):
 }
 ```
 
-### Contoh 6: menggunakan ekspresi matematika dengan variabel lain
+### Contoh 6: Menggunakan ekspresi matematika dengan variabel lain
 ```earl
 atur :a: = 10
 atur :b: = :a: * 2 + 5
