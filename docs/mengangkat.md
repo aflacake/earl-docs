@@ -18,7 +18,7 @@ mengangkat :nama_variabel: nilai_kenaikan
 - Jika tipe variabel tidak cocok, perintah akan gagal.
 
 ## Contoh Penggunaan
-### Contoh 1: menaikkan angka
+### Contoh 1: Menaikkan angka
 ```earl
 atur :score: = 10
 mengangkat :score: 5
@@ -27,7 +27,7 @@ tampilkan :score:
 
 Keluaran: `15`.
 
-### Contoh 2: menaikkan atribut angka dalam array objek
+### Contoh 2: Menaikkan atribut angka dalam array objek
 ```earl
 atur :data: = [{point: 2}, {point: 3}]
 mengangkat :data: 2
@@ -46,7 +46,7 @@ Keluaran (verbose):
 ]
 ```
 
-### Contoh 3: menaikkan atribut angka dalam objek
+### Contoh 3: Menaikkan atribut angka dalam objek
 ```earl
 atur :coords: = {x: 3, y: 7}
 mengangkat :coords: 1
