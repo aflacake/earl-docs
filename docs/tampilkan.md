@@ -1,53 +1,86 @@
 # `tampilkan`
-Modul ini berfungsi untuk **menampilkan nilai variabel atau ekspresi** dalam konteks program, dengan kemampuan untuk mengakses variabel sederhana, _nested object_, _array_, dan juga menyimpan hasil keluaran ke file.
+Modul `tampilkan` digunakan untuk mencetak teks, nilai variabel, array, objek, atau ekspresi ke layar (atau ke file jika diarahkan).
 
-## Fungsi Utama:
-`tampilkan(tokens, modules, context)`
-- Deskripsi:
-  Menampilkan isi dari token-token yang diberikan. Token bisa berupa:
-  - String literal (contoh: `"Halo Dunia"`).
-  - Nama variabel (contoh: `:nama:`).
-  - Ekspresi matematika sederhana.
-  - Akses ke objek bersarang atau _array_.
-  - Perintah khusus seperti menampilkan seluruh memory atau menyimpan _output_ ke file.
-- Parameter
-  - `tokens`, _array_ string dari perintah dan argumen (contoh: `['tampilkan', ':nama:']`).
-   `modules`, objek modul lain (tidak dipakai dalam fungsi utama ini).
-  - `context`, objek yang berisi data konteks seperti memory (penyimpanan variabel), `lingkup` (scope variabel lokal), dan `ini` (objek khusus).
-- Fitur Utama:
-  - Mendukung flag `-v` untuk _output verbose_ (lebih detail dan format JSON).
-  - Mendukung perintah `memory` untuk menampilkan seluruh isi variabel yang tersimpan.
-  - Mendukung _output_ ke file menggunakan simbol `>`.
-  - Mendukung akses variabel _nested_, _array_, dan objek menggunakan format token seperti `:var:key:`, `:var[0]:`, dan `:obj.atribut:`.
-- Contoh Penggunaan:
-  ```earl
-  tampilkan :nama:
-  tampilkan -v :data:
-  tampilkan "Halo" :user.name:
-  tampilkan :list[2]:
-  tampilkan > "output.txt"
-  tampilkan memory
-  ```
+## Sintaks Perintah
+```earl
+tampilkan [opsi] nilai1 nilai2 ... [> "nama_file"]
+```
 
-## Fungsi Pendukung:
-`resolveToken(token, context, modules)`
-- Mengubah token menjadi nilai yang sesuai dari `memory`, `lingkup`, atau objek `ini`.
-- Mendukung berbagai format token seperti variabel biasa, nested keys, _array index_, objek atribut, dan ekspresi matematika.
-`evalMathExpression(expr)`
-- Mengevaluasi ekspresi matematika sederhana dari _string_.
-- Aman terhadap karakter non-angka/operator.
-`formatValue(val, verbose)`
-- Memformat nilai agar tampil lebih menarik di _console_ dengan warna, misalnya:
-  - Angka berwarna cyan.
-  - String berwarna hijau dengan tanda kutip.
-  - Boolean berwarna kuning.
-  - Array dan objek bisa tampil ringkas atau _verbose_ (JSON _pretty print_).
- 
-## Keluaran:
-- Jika tidak ada perintah simpan file, hasil ditampilkan di _console_ dengan format warna.
-- Jika ada simbol `>` diikuti nama file, hasil _output_ disimpan ke file tersebut.
+- `nilai` bisa berupa:
+  - Teks dalam tanda kutip, `"Halo"`.
+  - Variabel, `:nama:`.
+  - Objek atau array, `:data:`.
+  - Ekspresi, bisa berupa `:objek.kunci:` atau `:daftar[0]:`.
+- Opsi tambahan:
+  - `-v`, tampilkan dalam format verbose (misalnya JSON objek atau _array_).
+  - `memory`, tampilkan semua isi memori.
 
-## Catatan:
-- Modul ini membantu debugging dan melihat isi variabel dengan cara yang mudah dibaca.
-- Format token fleksibel untuk mengakses data kompleks.
-- Cocok digunakan dalam CLI _scripting_ atau REPL berbasis konteks memory.
+## Contoh Penggunaan
+### Contoh 1: Menampilkan teks biasa
+```earl
+tampilkan "Selamat datang"
+```
+
+Keluaran: `Selamat datang`.
+
+### Contoh 2: Menampilkan isi variabel
+```earl
+atur :nama: = "Budi"
+tampilkan :nama:
+```
+
+Keluaran: `"Budi"`.
+
+### Contoh 3: Menampilkan array
+```earl
+atur :angka: = [1, 2, 3]
+tampilkan :angka:
+```
+
+Keluaran: `1 2 3`.
+
+### Contoh 4: Menampilkan objek
+```earl
+atur :orang: = {nama: "Sari", usia: 30}
+tampilkan -v :orang:
+```
+
+Keluaran (verbose):
+```bash
+{
+  "nama": "Sari",
+  "usia": 30
+}
+```
+
+# Contoh 5: Menampilkan atribut objek
+```earl
+tampilkan :orang.nama:
+```
+
+Keluaran: `"Sari"`.
+
+### Contoh 6: Menampilkan elemen array
+```earl
+tampilkan :angka[1]:
+```
+
+Keluaran: `2`.
+
+### Contoh 7: Menyimpan hasil ke file
+```earl
+tampilkan "Data selesai." > "log.txt"
+```
+
+Keluaran akan disimpan ke `log.txt`.
+
+### Contoh 8: Menampilkan seluruh memory
+```earl
+tampilkan memory
+```
+
+Keluaran: semua variabel dan nilainya.
+
+Catatan Tambahan:
+- Modul ini menggunakan `resolveToken` untuk memahami variabel, objek, atribut, dan ekspresi kompleks lainnya.
+- Sangat cocok digunakan saat debugging atau saat ingin melihat hasil proses secara langsung.
