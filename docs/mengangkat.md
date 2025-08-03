@@ -25,7 +25,7 @@ mengangkat :score: 5
 tampilkan :score:
 ```
 
-Keluaran: 15
+Keluaran: `15`.
 
 ### Contoh 2: menaikkan atribut angka dalam array objek
 ```earl
