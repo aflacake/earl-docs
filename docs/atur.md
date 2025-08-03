@@ -1,35 +1,79 @@
-# `atur`
-Menyimpan atau memperbarui nilai sebuah variabel di dalam memori global program.
+# Modul atur
+Modul ini digunakan untuk mengatur atau menyimpan nilai ke dalam variabel di memori. Variabel selalu dalam format `:nama:`.
 
-## Format Perintah:
-```earl
-atur :nama: = nilai
+## Sintaks Perintah
+```bash
+atur :nama_variabel: = nilai
 ```
-Penjelasan:
-- `:nama:`, nama variabel (harus diapit diawali dan diakhiri dengan titik dua).
-- `nilai`, bisa berupa angka, teks, variabel lain, atau gabungan beberapa token.
-
-## Contoh Penggunaan:
-Menyimpan teks:
-```earl
-atur :pesan: = "Halo Dunia!"
+atau
+```bash
+atur :nama_variabel: [nilai1 nilai2 nilai3 ...]
 ```
 
-Menyimpan angka atau nilai dari variabel lain:
+- `:nama_variabel:`, nama variabel yang akan diatur, harus dalam format `:nama:`.
+- `nilai`, bisa berupa angka, _string_, objek JSON, _array_, atau ekspresi matematika yang akan dihitung.
+
+## Penjelasan
+- Jika menggunakan tanda sama dengan (`=`), nilai bisa berupa:
+  - Ekspresi matematika (contoh: `3 + 4 * 2`)
+  - Objek JSON (contoh: `{key: "value", count: 5}`)
+  - _Array_ JSON (contoh: `[1, 2, 3]`)
+- Jika tanpa tanda sama dengan, dan langsung diikuti _array_ (contohnya `[nilai1 nilai2 ...]`), akan _di-parse_ menjadi _array_ biasa.
+- Nilai ekspresi yang mengandung variabel lain (`:variabel_lain:`) akan digantikan dengan nilai variabel tersebut.
+- Variabel yang sudah diatur disimpan di `context.memory`.
+
+## Contoh Penggunaan
+### Contoh 1: mengatur angka
 ```earl
-isi :angka: dengan 10
-atur :salin: = :angka:
+atur :umur: = 25
+tampilkan :umur:
 ```
 
-Menyimpan beberapa kata:
-```earl
-atur :salam: = "Halo" dunia!
-```
-Hasilnya variabel `:salam:` berisi teks "Halo dunia!"
+Keluaran: `25`
 
-## Cara Kerja:
-1. Mengecek format `atur :nama: = ...`.
-2. Menghapus tanda `:` dari nama variabel.
-3. Jika hanya satu nilai, langsung simpan.
-4. Jika banyak nilai (lebih dari satu token setelah `=`), gabungkan jadi satu _string_ atau teks.
-5. Nilai disimpan ke `context.memmory`.
+### Contoh 2: mengatur _string_
+```earl
+atur :nama: = "Andi"
+tampilkan :nama:
+```
+
+Keluaran: `"Andi"`
+
+### Contoh 3: mengatur _array_ dengan tanda sama dengan
+```earl
+atur :angka: = [1, 2, 3, 4]
+tampilkan :angka:
+```
+
+Keluaran: `1 2 3 4`
+
+### Contoh 4: mengatur _array_ tanpa tanda sama dengan
+```earl
+atur :buah: [apel pisang jeruk]
+tampilkan :buah:
+```
+
+Kelauaran: `apel pisang jeruk`
+
+### Contoh 5: mengatur objek JSON
+```earl
+atur :mobil: = {merk: "Toyota", tahun: 2020}
+tampilkan -v :mobil:
+```
+
+Keluaran (verbose):
+```bash
+{
+  "merk": "Toyota",
+  "tahun": 2020
+}
+```
+
+### Contoh 6: menggunakan ekspresi matematika dengan variabel lain
+```earl
+atur :a: = 10
+atur :b: = :a: * 2 + 5
+tampilkan :b:
+```
+
+Keluaran: `25`.
