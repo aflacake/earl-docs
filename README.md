@@ -61,6 +61,10 @@ Lalu ketik perintah langsung di terminal. Ketik `keluar` untuk menghentikan REPL
   ```bash
   npm install form-data
   ```
+- Memanggil API GitHub, misalnya untuk `picuAlurKerja`.
+  ```bash
+  npm install axios
+  ```
 
 # Instalasi dan Pengembangan
 Karena Earl berbasis Node.js, kamu hanya perlu:
