@@ -65,6 +65,10 @@ Lalu ketik perintah langsung di terminal. Ketik `keluar` untuk menghentikan REPL
   ```bash
   npm install axios
   ```
+- Memungkinkan memasang Electron bisa bikin dan kontrol jendela aplikasi desktop dari skrip.
+  ```bash
+  npm install electron
+  ```
 
 # Instalasi dan Pengembangan
 Karena Earl berbasis Node.js, kamu hanya perlu:
