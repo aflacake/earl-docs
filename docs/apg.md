@@ -1,46 +1,47 @@
 # `apg`
-Modul `apg` memungkinkan membuka jendela antarmuka grafis menggunakan **Electron**, mengirim pesan ke dalamnya, dan menutup jendela tersebut langsung dari kode Earl.
+Modul ini memungkinkan skrip Earl berinteraksi dengan antarmuka grafis berbasis Electron, seperti **membuka halaman web**, **mengirim dan menerima pesan**, serta **menutup jendela**.
 
-Jika Anda adalah pemula, anggap ini sebagai cara untuk "menampilkan tampilan web" langsung dalam skrip bahasa Earl.
+## Struktur Umum:
+```bash
+apg <perintah> <opsi>
+```
 
-## Kebutuhan:
-Pastikan menjalankan program menggunakan **Electron** karena modul ini memakai fitur `BrowserWindow` dari Electron.
-
-## Sintaks Perintah:
-1. `apg buka <url>`
-   Membuka jendela baru yang menampilkan halaman dari URL tertentu.\
+## Perintah yang Didukung:
+1. `apg buka <url> [opsi]`
+   Membuka jendela Electron dengan halaman tertentu.\
    Contoh:
    ```earl
-   apg buka https://example.com
+   apg buka https://example.com :id=utama :lebar=1024 :tinggi=768 :judul="Demo" :layarpenuh=false
    ```
-   Jika `<url>` tidak diberikan, maka akan membuka `https://example.com` secara bawaan.
-
-2. `apg kirim <pesan>`
-   Mengirim pesan dari proses utama ke jendela yang terbuka.\
+   Opsi:
+   1. `:id=nama`, ID unik jendela (bawaan: `default`).
+   2. `:lebar=800`, lebar jendela (bawaan: 800).
+   3. `:tinggi=600`, tinggi jendela (bawaan: 600).
+   4. `:judul=teks`, judul jendela.
+   5. `:layarpenuh=true/false`, menampilkan layarpenuh atau tidak.
+  
+2. `apg kirim <pesan> [:id=nama]`
+   Mengirim pesan ke jendela tertentu dan menunggu **balasan** dari jendela tersebut.\
    Contoh:
    ```earl
-   apg kirim Halo dari Earl!
+   apg kirim "Hai jendela!" :id=utama
    ```
-   
-   Di dalam jendela web, kamu bisa menangkap pesan ini menggunakan:
-   ```js
-   const { ipcPenyaji } = require('electron');
-   ipcPenyaji.on('pesan-dari-utama', (event, msg) => {
-     console.log('Pesan dari utama:', msg);
-   });
-   ```
+   Pesan akan dikirim otomatis dikirim ke channel `pesan-dari-utama` dan balasan akan diterima dari penyaji melalui `saluranBalasan`.
 
-3. `apg tutup`
-   Menutup jendela yang sedang terbuka.\
+3. `apg tutup [:id=nama]`
+   Menutup jendela tertentu.\
    Contoh:
    ```earl
-   apg tutup
+   apg tutup :id=utama
    ```
 
-## Penanganan Kesalahan:
-Jika terjadi kesalahan (misalnya membuka jendela sebelum Electron siap), pesan kesalahan akan disimpan dalam `context.return`.
+## Komunikasi Pesan:
+- Pesan dikirim dari `main process` ke `penyaji` dengan channel `pesan-dari-utama`.
+- `penyaji` dapat mengirim balasan ke saluran dinamis yang dikirim bersamaan (`saluranBalasan`).
+- `ipcMain` akan otomatis menangani dan membalas jika `saluranBalasan` tersedia.
 
-## Catatan Teknis:
-- Modul menggunakan `ipcMain` untuk mendengarkan pesan dari jendela.
-- Jendela hanya akan ditampilkan saat sudah siap (`ready-to-show`).
-- `nodeIntegration` dan `contextIsolation` disesuaikan untuk kemudahan komunikasi, **jangan digunakan untuk produksi tanpa mempertimbangkan keamanan**.
+## Catatan Penting:
+- Modul ini hanya berfungsi saat dijalankan di lingkungan **Electron**.
+- URL harus diawali `http://`, `https://`, atau `file://`.
+- ID jendela membolehkan beberapa jendela dibuka dan dikontrol secara paralel.
+- Sangat cocok untuk integrasi GUI dengan skrip Earl CLI.
