@@ -1,5 +1,5 @@
 # `tampilkan`
-Modul `tampilkan` digunakan untuk mencetak teks, nilai variabel, array, objek, atau ekspresi ke layar (atau ke file jika diarahkan).
+Modul `tampilkan` digunakan untuk mencetak teks, nilai variabel, _array_, objek, atau ekspresi ke layar (atau ke file jika diarahkan).
 
 ## Sintaks Perintah
 ```earl
