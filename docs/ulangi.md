@@ -9,13 +9,13 @@ Modul `ulangi` digunakan untuk membuat **perulangan** di dalam kode Earl. Modul 
     selesai
    ```
    - `:nama_daftar:` adalah variabel array yang ingin diulang.
-   - Di setiap iterasi, variabel `item` tersedia dan berisi elemen saat ini dari daftar.
+   - Di setiap iterasi, variabel `barang` tersedia dan berisi elemen saat ini dari daftar.
    
    Contoh:
    ```earl
    atur :angka: = [1 2 3]
    ulangi setiap dari :angka:
-     tampilkan "Nilai item:" :item:
+     tampilkan "Nilai item:" barang
    selesai
    ```
 2. Perulangan berdasarkan jumlah (integer)
@@ -25,12 +25,12 @@ Modul `ulangi` digunakan untuk membuat **perulangan** di dalam kode Earl. Modul 
    selesai
    ```
    - `<jumlah>` adalah banyaknya pengulangan yang ingin dilakukan (angka).
-   - Di setiap iterasi, variabel `index` tersedia dan berisi nomor iterasi saat ini (dimulai dari 0).
+   - Di setiap iterasi, variabel `indeks` tersedia dan berisi nomor iterasi saat ini (dimulai dari 0).
   
    Contoh:
    ```earl
    ulangi 5
-     tampilkan "Perulangan ke-" :index:
+     tampilkan "Perulangan ke-" indeks
    selesai
 
 ## Catatan penting:
