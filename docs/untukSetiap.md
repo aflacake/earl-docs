@@ -8,14 +8,14 @@ untukSetiap <koleksi> setiap <barang>
 selesai
 ```
 - `<koleksi>` adalah nama variabel yang berisi _array_ atau koleksi data.
-- `<item>` adalah nama variabel yang akan diisi dengan nilai setiap elemen dari koleksi.
+- `<barang>` adalah nama variabel yang akan diisi dengan nilai setiap elemen dari koleksi.
 - `<perintah>` adalah serangkaian perintah yang akan dijalankan untuk setiap elemen dalam koleksi.
 
 ## Langkah Kerja:
 1. Modul ini akan mengambil koleksi yang diberikan (misalnya _array_).
 2. Untuk setiap elemen dalam koleksi, ia akan menjalankan perintah yang ada dalam blok `selesai`.
-3. Pada setiap iterasi, elemen saat ini akan disimpan dalam variabel yang disebut `<item>`.
-4. Perintah dalam blok akan dieksekusi dengan `<item>` yang terisi nilai elemen koleksi.
+3. Pada setiap iterasi, elemen saat ini akan disimpan dalam variabel yang disebut `<barang>`.
+4. Perintah dalam blok akan dieksekusi dengan `<barang>` yang terisi nilai elemen koleksi.
 
 ## Contoh Penggunaan:
 ### Contoh 1: Menampilkan Setiap Elemen
@@ -48,6 +48,6 @@ Penjelasan:
 
 ## Kesalahan yang Sering Terjadi:
 1. Format Salah:
-   - Pastikan bahwa format `untukSetiap <koleksi> setiap <item> perintah selesai` diikuti dengan benar. Jika tidak, akan mendapatkan pesan kesalahan terkait sintaks yang salah.
+   - Pastikan bahwa format `untukSetiap <koleksi> setiap <barang> perintah selesai` diikuti dengan benar. Jika tidak, akan mendapatkan pesan kesalahan terkait sintaks yang salah.
 2. Koleksi Bukan Array:
    - Modul `untukSetiap` hanya dapat digunakan dengan koleksi yang bertipe _array_. Jika variabel yang diberikan bukan _array_, akan mendapatkan pesan kesalahan.
