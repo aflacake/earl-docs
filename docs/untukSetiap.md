@@ -21,20 +21,20 @@ selesai
 ### Contoh 1: Menampilkan Setiap Elemen
 Misalnya memiliki _array_ angka dan ingin menampilkan setiap angka.
 ```earl
-atur :angkaArray: = [1, 2, 3]
+atur :angkaArray: = [1 2 3]
 untukSetiap :angkaArray: setiap :angka:
     tampilkan :angka:
 selesai
 ```
 Penjelasan:
-- `:angkaArray:` adalah nama koleksi (_array_) yang berisi angka `[1, 2, 3]`.
+- `:angkaArray:` adalah nama koleksi (_array_) yang berisi angka `[1 2 3]`.
 - `:angka:` adalah nama variabel yang akan diisi dengan setiap elemen dari `:angkaArray:`.
 - `tampilkan :angka:` adalah perintah yang akan dijalankan untuk setiap elemen, yang dalam kasus ini akan menampilkan angka.
 
 ### Contoh 2: Menghitung Jumlah Angka
 Misalkan ingin menghitung jumlah dari semua angka dalam _array_.
 ```earl
-atur :angkaArray: = [1, 2, 3, 4]
+atur :angkaArray: = [1 2 3 4]
 atur :jumlah: = 0
 untukSetiap :angkaArray: setiap :angka:
     atur :jumlah: = :jumlah: + :angka:
