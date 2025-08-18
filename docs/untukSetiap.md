@@ -3,7 +3,7 @@ Modul `untukSetiap` digunakan untuk menjalankan serangkaian perintah pada setiap
 
 ## Format Umum:
 ```earl
-untukSetiap <koleksi> setiap <item>
+untukSetiap <koleksi> setiap <barang>
     <perintah>
 selesai
 ```
