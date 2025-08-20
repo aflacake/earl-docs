@@ -1,6 +1,10 @@
 # `fungsi`
 Modul `fungsi` memungkinkan pengguna untuk mendefinisikan fungsi buatan sendiri di bahasa Earl, lengkap dengan parameter dan isi kode yang dapat dipanggil ulang.
 
+## Dua Mode:
+- Mode skrip (non-REPL), menggunakan tanda kurung `(` dan `)` untuk membuka atau tutup blok fungsi.
+- Mode REPL, harus menggunakan tanda `selesai` sebagai akhir blok fungsi.
+
 ## Format Penulisan:
 ```earl
 fungsi namaFungsi(param1, param2)
