@@ -36,18 +36,6 @@ Earl dibangun menggunakan Node.js, dengan pendekatan berbasis modul. Setiap peri
    ```
 
 # Cara Menjalankan Earl
-## Dengan Node.js
-Untuk menjalankan kode Earl dari file `.earl`, gunakan perintah:
-```bash
-node index.js nama_file.earl
-```
-
-Jika ingin mencoba secara langsung dalam mode interaktif (REPL), cukup jalankan:
-```bash
-node index.js
-```
-Lalu ketik perintah langsung di terminal. Ketik `keluar` untuk menghentikan REPL.
-
 ### Bahan dari Pihak Ketiga
 - Menginstal paket tambahan di Node.js untuk keperluan merender visual atas perintah aturan 'gambar' dengan
   ```bash
@@ -69,6 +57,70 @@ Lalu ketik perintah langsung di terminal. Ketik `keluar` untuk menghentikan REPL
   ```bash
   npm install electron
   ```
+
+## Dengan Node.js
+Untuk menjalankan kode Earl dari file `.earl`, gunakan perintah:
+```bash
+node index.js nama_file.earl
+```
+
+Jika ingin mencoba secara langsung dalam mode interaktif (REPL), cukup jalankan:
+```bash
+node index.js
+```
+Lalu ketik perintah langsung di terminal. Ketik `keluar` untuk menghentikan REPL.
+
+## Dengan CLI
+### Global
+```bash
+npm link
+```
+Lalu uji:
+```bash
+earl "atur :angka: = 42\\ntampilkan :angka:"
+earl tes.earl
+```
+
+### Pengguna Windows
+File CLI bernama: `earl.cmd`.
+File `package.json` dan `earl.cmd` sudah disiapkan maka langsung arahkan ke folder, lalu jalankan:
+```bash
+npm link
+```
+
+#### Tambahkan ke PATH
+1. Salin semua file atau download semua file ini dengan keterangan versi terbaru (rekomendasi) atau pada saat proses pengembangan juga terbaik (perlu perbaikan).
+   > Misalnya di C:\Users\KAMU\earl
+2. Tambahkan folder tersebut ke PATH:
+   - Tekan `Win + R`, ketik _Edit the system environment variables_ lalu _Enter_
+   - Tab _**Advanced**_ > _Environment Variables_
+   - Dibagian _User variables_, pilih _Path_ lalu
+   - **New** > masukkan
+     > Misalnya di C:\Users\KAMU\earl
+   - **OK** dan restart terminal
+
+Jalankan dengan menggunakan perintah:
+```bash
+earl contoh.earl
+```
+
+### Pengguna Linux dan MacOS
+File CLI bernama: `earl`
+#### Tambahkan ke PATH
+Dengan menjalankan folder langsung atau saat ini:
+```bash
+./earl contoh.earl
+```
+atau
+
+Berikan hak akses eksekusi:
+```bash
+chmod +x bin/earl
+```
+link ke global:
+``` bash
+npm link
+```
 
 # Instalasi dan Pengembangan
 Karena Earl berbasis Node.js, kamu hanya perlu:
